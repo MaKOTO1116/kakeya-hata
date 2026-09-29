@@ -1,13 +1,742 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>波多地区 紹介ページ</title>
-    <link rel="stylesheet" href="./assets/style.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="./assets/app.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>波多地区・波多神社の魅力紹介 | 島根県雲南市 掛合分校探究プロジェクト</title>
+  <meta name="description" content="島根県雲南市掛合町波多地区の魅力を発信！自然豊かで人が温かい里山、由緒ある波多神社、出雲の伝統芸能「はやしこ」、名物「はたせんべい」、波多温泉「満壽の湯」などを紹介します。" />
+  
+  <!-- Google Fonts: 日本の伝統美とモダンな読みやすさを両立 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- スタイルシート -->
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  <!-- ナビゲーションヘッダー -->
+  <header class="site-header" id="top">
+    <div class="header-container">
+      <a href="#top" class="header-logo">
+        <div class="logo-mark">波</div>
+        <div class="logo-text">
+          <span class="logo-title">波多地区・波多神社</span>
+          <span class="logo-sub">掛合分校 探究プロジェクト</span>
+        </div>
+      </a>
+      
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="#about" class="nav-link">波多の魅力</a>
+        <a href="#spots" class="nav-link">名所・スポット</a>
+        <a href="#shrine" class="nav-link shrine-nav-item">⛩️ 波多神社 特集</a>
+        <a href="#hayashiko" class="nav-link">はやしこ</a>
+        <a href="#senbei" class="nav-link">はたせんべい</a>
+        <a href="#gallery" class="nav-link">写真館</a>
+        <a href="#access" class="nav-link">アクセス</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ヒーローセクション（ファーストビュー） -->
+  <section class="hero-section">
+    <div class="hero-bg-wrapper">
+      <img src="./img/波多神社 (5).jpg" alt="雪景色の神聖な波多神社" class="hero-bg-img hero-img-primary" id="heroBg">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge-tag">
+        <span class="school-tag">🏫 島根県立大東高校 掛合分校 探究学習</span>
+      </div>
+
+      <!-- 4大キーワードバッジ -->
+      <div class="keyword-badges">
+        <span class="k-badge k-badge-nature">🌿 自然豊か</span>
+        <span class="k-badge k-badge-warmth">💛 人が温かい</span>
+        <span class="k-badge k-badge-culture">🏮 はやしこ</span>
+        <span class="k-badge k-badge-food">🍘 はたせんべい</span>
+      </div>
+
+      <div class="hero-titles">
+        <span class="hero-sub-title">— 島根県雲南市 掛合町波多 —</span>
+        <h1 class="hero-main-title">
+          <span class="title-place">波多</span>
+          <span class="title-subtext">の祈りと温もり</span>
+        </h1>
+      </div>
+
+      <p class="hero-lead">
+        豊かな自然に抱かれ、温かな人々が紡ぐ、歴史と伝統芸能の里。<br>
+        奥深い森にたたずむ<strong>「波多神社」</strong>と、受け継がれる地域の絆をご紹介します。
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#shrine" class="btn btn-gold">
+          <span>⛩️ 波多神社の魅力を知る</span>
+        </a>
+        <a href="#about" class="btn btn-outline">
+          <span>🌿 波多ってこんなところ</span>
+        </a>
+      </div>
+
+      <!-- サブサムネイルプレビュー -->
+      <div class="hero-thumb-cards">
+        <div class="thumb-card">
+          <img src="./img/はやしこ奉納.jpg" alt="波多神社秋の例大祭 はやしこ奉納">
+          <span class="thumb-caption">波多神社 はやしこ奉納</span>
+        </div>
+        <div class="thumb-card">
+          <img src="./img/波多マーケット.JPG" alt="地域の笑顔が集まる はたマーケット">
+          <span class="thumb-caption">温もり集う はたマーケット</span>
+        </div>
+        <div class="thumb-card">
+          <img src="./img/波多せんべい2.jpg" alt="名物 はたせんべい">
+          <span class="thumb-caption">名物 はたせんべい</span>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="下にスクロール">
+        <span class="scroll-text">SCROLL</span>
+        <div class="scroll-arrow">↓</div>
+      </a>
+    </div>
+
+    <!-- 波型の区切りデコレーション -->
+    <div class="wave-divider">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0 C150,90 350,-40 500,45 C650,130 900,10 1200,60 L1200,120 L0,120 Z" fill="#FAF8F5"></path>
+      </svg>
+    </div>
+  </section>
+
+  <main>
+    <!-- セクション1：波多ってこんなところ（自然豊か × 人が温かい） -->
+    <section class="section section-about" id="about">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-label">ABOUT HATA</div>
+          <h2 class="section-title">波多って、こんなところ</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle">中国山地の山並みに抱かれた、温もりに満ちた里山</p>
+        </div>
+
+        <div class="lead-card">
+          <p class="lead-text">
+            波多（はた）は、島根県雲南市掛合町の南西部に位置する、<strong class="highlight-nature">自然豊か</strong>で澄んだ空気と清らかな水に恵まれた山里の地域です。<br>
+            そして何よりも、この地を訪れる人を笑顔で迎えてくれる<strong class="highlight-warmth">人が温かい</strong>温もりのある絆が、波多のいちばんの自慢です。
+          </p>
+          <div class="lead-features-grid">
+            <div class="feature-box">
+              <div class="feature-icon">🌿</div>
+              <h3 class="feature-title">自然豊か</h3>
+              <p class="feature-desc">四方を豊かな森に囲まれ、四季折々に美しい表情を見せる里山。澄んだ渓流のせせらぎや、悠久の時を刻む巨樹が心を優しく包み込みます。</p>
+            </div>
+            <div class="feature-box">
+              <div class="feature-icon">💛</div>
+              <h3 class="feature-title">人が温かい</h3>
+              <p class="feature-desc">地域の人々が互いを思いやり、笑顔で挨拶を交わすあたたかさ。マーケットや温泉に集う地元の方々の温かい人情に、誰もがほっと癒やされます。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 波多の魅力スポット・文化カード一覧 -->
+        <div class="spots-heading" id="spots">
+          <h3 class="sub-section-title">波多を彩る４つの魅力</h3>
+          <p class="sub-section-desc">伝統芸能・温泉・笑顔の交流拠点・愛されるふるさとの味</p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- カード1：はやしこ -->
+          <article class="card spot-card" id="hayashiko">
+            <div class="card-img-wrap">
+              <img src="./img/はやしこ.JPG" alt="はやしこを踊り練り歩く風景" class="card-img" loading="lazy">
+              <span class="card-tag tag-culture">🏮 出雲の郷土芸能</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">はやしこ</h4>
+              <p class="card-text">
+                「はやしこ」は浴衣姿の男女が花笠をかぶり、太鼓と笛で奏でる軽やかな旋律に乗って、踊り、練り歩く出雲地方に伝わる郷土芸能です。
+              </p>
+              <p class="card-subtext">
+                色鮮やかな衣装と花笠が街道を彩り、毎年11月14日の「波多神社 秋の例大祭」で神前に奉納される、地域の誇りある伝統です。
+              </p>
+              <div class="card-footer-tags">
+                <span class="mini-tag">#伝統芸能</span>
+                <span class="mini-tag">#花笠と浴衣</span>
+                <span class="mini-tag">#波多神社奉納</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- カード2：満壽の湯 -->
+          <article class="card spot-card">
+            <div class="card-img-wrap">
+              <img src="./img/満壽の湯.jpg" alt="波多温泉 満壽の湯の外観" class="card-img" loading="lazy">
+              <span class="card-tag tag-onsen">♨️ 温浴・憩いの場</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">波多温泉 満壽の湯</h4>
+              <p class="card-text">
+                心も体も芯からぽかぽかに温まる波多の天然温泉<strong>「満壽の湯（ますのゆ）」</strong>。地元の方々にも旅人にも親しまれる癒やしの空間です。
+              </p>
+              <p class="card-subtext">
+                ゆったりとお湯に浸かりながら、地域の方々と気さくに交わす世間話も楽しみのひとつ。人の温かさを肌で感じられるスポットです。
+              </p>
+              <div class="card-footer-tags">
+                <span class="mini-tag">#波多温泉</span>
+                <span class="mini-tag">#満壽の湯</span>
+                <span class="mini-tag">#憩いの湯</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- カード3：はたマーケット＆交流センター -->
+          <article class="card spot-card">
+            <div class="card-img-wrap">
+              <img src="./img/波多マーケット.JPG" alt="活気あるはたマーケットの秋収穫祭" class="card-img" loading="lazy">
+              <span class="card-tag tag-warmth">🛒 人の温かさが集う場所</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">はたマーケット ＆ 波多交流センター</h4>
+              <p class="card-text">
+                旧波多小学校の温もりある校舎を活用した「波多交流センター」内にある、地域の笑顔の拠点<strong>「はたマーケット」</strong>。
+              </p>
+              <p class="card-subtext">
+                新鮮な地元野菜や日用品が揃い、収穫祭などのイベントには赤ちゃんからお年寄りまでみんなが集い、笑顔と会話が広がります。
+              </p>
+              <div class="card-footer-tags">
+                <span class="mini-tag">#はたマーケット</span>
+                <span class="mini-tag">#波多交流センター</span>
+                <span class="mini-tag">#地域の絆</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- カード4：はたせんべい -->
+          <article class="card spot-card" id="senbei">
+            <div class="card-img-wrap">
+              <img src="./img/波多せんべい2.jpg" alt="波多神社とはやしこの焼印が入った波多せんべい" class="card-img" loading="lazy">
+              <span class="card-tag tag-food">🍘 名物・お土産</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">名物 はたせんべい</h4>
+              <p class="card-text">
+                一口食べると香ばしさと優しい甘みが広がる、地元で長く愛され続ける銘菓<strong>「はたせんべい」</strong>。
+              </p>
+              <p class="card-subtext">
+                おせんべいには「波多神社」の鳥居や「はやしこ」の愛らしいデザインが焼印されています！軽くて持ち運びやすく、お土産に大人気です。
+              </p>
+              <div class="card-footer-tags">
+                <span class="mini-tag">#はたせんべい</span>
+                <span class="mini-tag">#波多神社デザイン</span>
+                <span class="mini-tag">#お土産</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- セクション2：波多神社 特集（大特集・魅力を徹底紹介） -->
+    <section class="section section-shrine" id="shrine">
+      <div class="shrine-pattern-overlay"></div>
+      
+      <div class="container relative-z">
+        <div class="shrine-badge-header text-center">
+          <div class="shrine-emblem">⛩️</div>
+          <div class="shrine-tagline">HATA SHRINE SPECIAL FEATURE</div>
+          <h2 class="shrine-title">波多神社の魅力</h2>
+          <div class="shrine-divider">
+            <span class="divider-line"></span>
+            <span class="divider-symbol">❖ 由緒ある祈りの杜 ❖</span>
+            <span class="divider-line"></span>
+          </div>
+          <p class="shrine-sublead">
+            鬱蒼とした深い杜に抱かれ、悠久の歴史と人々の祈りを今に伝える「波多神社」。<br>
+            境内に一歩足を踏み入れれば、日常を忘れさせる静寂と清廉な空気が満ちています。
+          </p>
+        </div>
+
+        <!-- 神社 メインビジュアルカード（雪景色・ライトアップ写真） -->
+        <div class="shrine-hero-card">
+          <div class="shrine-hero-img-wrap">
+            <img src="./img/波多神社 (5).jpg" alt="雪の夜にライトアップされた波多神社の神聖な拝殿と御神木" class="shrine-hero-img" loading="lazy">
+            <div class="shrine-hero-caption">
+              <span class="caption-title">雪化粧に包まれる波多神社 拝殿</span>
+              <span class="caption-sub">立派な御神木が両脇にそびえ立ち、神秘的な光が社殿を照らし出す</span>
+            </div>
+          </div>
+          <div class="shrine-hero-desc">
+            <h3>自然と信仰が調和する、心洗われる聖域</h3>
+            <p>
+              波多神社は、古くから波多の里を見守り続けてきた由緒ある古社です。
+              苔むした石段を登ると、太古の息吹を感じさせる杉の巨木が迎えてくれます。
+              昼の木漏れ日、秋の紅葉と例大祭、そして冬の雪景色と、四季折々に神々しく美しい姿を見せ、訪れる人々に深い安らぎと活力を与えてくれます。
+            </p>
+          </div>
+        </div>
+
+        <!-- 波多神社の3大魅力ブロック -->
+        <div class="shrine-features-grid">
+          <!-- 魅力1：神聖な森と八本杉の歴史 -->
+          <div class="shrine-feature-item">
+            <div class="s-feature-img-box">
+              <img src="./img/波多神社.JPG" alt="かつて波多神社にそびえ立った八本杉の記念写真額縁" loading="lazy">
+              <span class="s-feature-badge">🌲 悠久の自然と歴史</span>
+            </div>
+            <div class="s-feature-content">
+              <h4 class="s-feature-title">魅力①：神聖な杜と巨木「八本杉」の歴史</h4>
+              <p>
+                波多神社の境内には天を突く立派な杉の大木（御神木）が立ち並び、神聖な静寂を保っています。
+                かつて境内にそびえていた「八本杉」は、昭和初期まで地域を見守り続けた伝説の巨樹で、現在も記念碑や写真額として大切に語り継がれています。
+                悠久の年月を超えて大自然と人々の祈りが重なり合う、波多の精神的なシンボルです。
+              </p>
+            </div>
+          </div>
+
+          <!-- 魅力2：秋の例大祭と「はやしこ奉納」 -->
+          <div class="shrine-feature-item">
+            <div class="s-feature-img-box">
+              <img src="./img/はやしこ奉納.jpg" alt="波多神社境内で大杉を背に行われるはやしこ奉納" loading="lazy">
+              <span class="s-feature-badge">🏮 毎年11月14日 例大祭</span>
+            </div>
+            <div class="s-feature-content">
+              <h4 class="s-feature-title">魅力②：秋の例大祭と「はやしこ」奉納</h4>
+              <p>
+                波多神社で最も賑わうのが、毎年11月14日に斎行される「秋の例大祭」です。
+                華やかな花笠と揃いの浴衣に身を包んだ男女が、太鼓と笛の軽やかな音色に乗って境内へと集い、神前で「はやしこ」を奉納します。
+                厳かな社殿と色鮮やかな衣装のコントラストは圧巻で、地域の絆と伝統の誇りが満ちあふれます。
+              </p>
+            </div>
+          </div>
+
+          <!-- 魅力3：波多奥飯石神楽・子ども神楽 -->
+          <div class="shrine-feature-item">
+            <div class="s-feature-img-box double-img-box">
+              <img src="./img/子ども神楽.jpg" alt="社殿で舞を披露する子ども神楽" loading="lazy">
+              <img src="./img/波多奥飯石神楽.jpg" alt="迫力ある大蛇が登場する波多奥飯石神楽" loading="lazy">
+              <span class="s-feature-badge">🎭 世代を紡ぐ伝統神楽</span>
+            </div>
+            <div class="s-feature-content">
+              <h4 class="s-feature-title">魅力③：熱気あふれる「神楽」の継承</h4>
+              <p>
+                波多神社には、出雲の神話世界を勇壮に表現する「波多奥飯石神楽」が伝承されています。
+                大蛇（オロチ）が舞い踊る迫力の舞台に加え、地域の次代を担う子どもたちが社殿で舞う「子ども神楽」も熱心に行われています。
+                大人から子どもへと手渡される伝統の熱意と、それを見守る地域の人々の温かい眼差しが波多神社の大きな魅力です。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 神社インフォメーションBOX -->
+        <div class="shrine-info-box">
+          <div class="s-info-col">
+            <span class="s-info-label">⛩️ 神社名</span>
+            <span class="s-info-val">波多神社（はたじんじゃ）</span>
+          </div>
+          <div class="s-info-col">
+            <span class="s-info-label">📍 鎮座地</span>
+            <span class="s-info-val">島根県雲南市掛合町波多</span>
+          </div>
+          <div class="s-info-col">
+            <span class="s-info-label">🏮 主な祭礼</span>
+            <span class="s-info-val">秋の例大祭（毎年11月14日）：はやしこ奉納・神楽奉納</span>
+          </div>
+          <div class="s-info-col">
+            <span class="s-info-label">✨ 見どころ</span>
+            <span class="s-info-val">御神木の杉並木、八本杉ゆかりの地、雪景色のライトアップ、四季の自然</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- セクション3：名物 はたせんべい特集 -->
+    <section class="section section-senbei">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-label">SPECIAL SOUVENIR</div>
+          <h2 class="section-title">ふるさとの味「はたせんべい」</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle">波多神社の鳥居と秋祭りの情景が刻まれた、心温まる銘菓</p>
+        </div>
+
+        <div class="senbei-feature-container">
+          <div class="senbei-left-poster">
+            <img src="./img/波多せんべいポスター.jpg" alt="波多せんべいポスター ふるさとの味を、大切な人へ" class="poster-img" loading="lazy">
+          </div>
+          <div class="senbei-right-detail">
+            <div class="senbei-quote-badge">香ばしくてどこか懐かしい —— 地元で長く愛される逸品</div>
+            <h3 class="senbei-catch">波多神社・秋祭りのデザインが嬉しい！<br>お土産に選ばれる3つの理由</h3>
+            
+            <ul class="senbei-points">
+              <li>
+                <div class="point-num">1</div>
+                <div class="point-desc">
+                  <strong>老若男女に喜ばれる素朴で優しい甘み</strong>
+                  <p>昔ながらの製法で丁寧に焼き上げられたせんべいは、噛むほどに香ばしい風味が口いっぱいに広がり、世代を問わずどなたにも愛されます。</p>
+                </div>
+              </li>
+              <li>
+                <div class="point-num">2</div>
+                <div class="point-desc">
+                  <strong>波多神社と秋祭りの特別な焼印</strong>
+                  <p>おせんべいの一枚一枚に、波多神社の鳥居やはやしこの可愛い絵柄が焼印されており、旅の思い出やお土産の話題作りにも最適です。</p>
+                </div>
+              </li>
+              <li>
+                <div class="point-num">3</div>
+                <div class="point-desc">
+                  <strong>持ち運びしやすい軽さでお土産にぴったり</strong>
+                  <p>個包装で軽く、日持ちもするため、大切なご家族やお友達へのプレゼント、手土産として大好評です。</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="senbei-sale-info">
+              <div class="sale-title">🛒 主な販売場所</div>
+              <p><strong>はたマーケット（波多コミュニティ協議会）</strong><br>島根県雲南市掛合町波多459-1（波多交流センター内）</p>
+              <p><strong>波多温泉 満壽の湯</strong><br>島根県雲南市掛合町波多1171-1</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- せんべい写真ギャラリー -->
+        <div class="senbei-gallery-row">
+          <div class="s-photo-card">
+            <img src="./img/波多せんべい.jpg" alt="波多神社のはやしこ奉納写真ラベルがついた波多せんべいパッケージ" loading="lazy">
+            <span>波多神社例大祭の写真ラベル</span>
+          </div>
+          <div class="s-photo-card">
+            <img src="./img/波多せんべい2.jpg" alt="波多神社の鳥居とはやしこの焼印せんべい" loading="lazy">
+            <span>鳥居とはやしこのオリジナル焼印</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- セクション4：波多フォトギャラリー（全14枚の写真を掲載・モーダル拡大機能付き） -->
+    <section class="section section-gallery" id="gallery">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-label">PHOTO GALLERY</div>
+          <h2 class="section-title">波多の情景・写真館</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle">波多神社、はやしこ、神楽、人の温もり。写真をクリックすると大きくご覧いただけます</p>
+        </div>
+
+        <!-- ギャラリーフィルター -->
+        <div class="gallery-filters" id="galleryFilters">
+          <button class="filter-btn active" data-filter="all">すべて表示 (14)</button>
+          <button class="filter-btn" data-filter="shrine">⛩️ 波多神社・神楽</button>
+          <button class="filter-btn" data-filter="culture">🏮 はやしこ</button>
+          <button class="filter-btn" data-filter="spots">💛 地域の暮らし・名物</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- 1. 波多神社雪景色 -->
+          <div class="gallery-item" data-category="shrine">
+            <div class="gallery-card" onclick="openModal('./img/波多神社 (5).jpg', '波多神社 雪の拝殿と御神木', '雪夜に照らされた厳かな波多神社。立派な御神木に抱かれ、神聖な静寂が漂います。')">
+              <img src="./img/波多神社 (5).jpg" alt="雪の波多神社" loading="lazy">
+              <div class="gallery-info">
+                <h4>波多神社 雪の拝殿</h4>
+                <p>夜のライトアップと神聖な雪化粧</p>
+                <span class="zoom-hint">🔍 クリックで拡大</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. はやしこ奉納 -->
+          <div class="gallery-item" data-category="shrine culture">
+            <div class="gallery-card" onclick="openModal('./img/はやしこ奉納.jpg', '波多神社 秋の例大祭 はやしこ奉納', '毎年11月14日に行われる秋の例大祭。大杉の前に浴衣と花笠姿の人々が集い、はやしこを神前に奉納します。')">
+              <img src="./img/はやしこ奉納.jpg" alt="波多神社秋の例大祭 はやしこ奉納" loading="lazy">
+              <div class="gallery-info">
+                <h4>はやしこ奉納</h4>
+                <p>波多神社境内に咲く色鮮やかな花笠</p>
+                <span class="zoom-hint">🔍 クリックで拡大</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. はやしこ練り歩き -->
+          <div class="gallery-item" data-category="culture">
+            <div class="gallery-card" onclick="openModal('./img/はやしこ.JPG', '出雲の郷土芸能 はやしこ', '浴衣姿の男女が花笠をかぶり、太鼓と笛で奏でる軽やかな旋律に乗って踊り練り歩く波多の伝統芸能。')">
+              <img src="./img/はやしこ.JPG" alt="はやしこの練り歩き" loading="lazy">
+              <div class="gallery-info">
+                <h4>はやしこ行列</h4>
+                <p>花笠と太鼓の音色が町に響き渡る</p>
+                <span class="zoom-hint">🔍 クリックで拡大</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. 子ども神楽 -->
+          <div class="gallery-item" data-category="shrine">
+            <div class="gallery-card" onclick="openModal('./img/子ども神楽.jpg', '社殿に響く 子ども神楽', '波多神社の社殿で舞を披露する子ども神楽。地域の伝統が大切に子どもたちへと受け継がれています。')">
+              <img src="./img/子ども神楽.jpg" alt="子ども神楽" loading="lazy">
+              <div class="gallery-info">
+                <h4>子ども神楽</h4>
+                <p>真剣な眼差しで舞を紡ぐ子どもたち</p>
+                <span class="zoom-hint">🔍 クリックで拡大</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. 波多奥飯石神楽 -->
+          <div class="gallery-item" data-category="shrine">
+            <div class="gallery-card" onclick="openModal('./img/波多奥飯石神楽.jpg', '迫力満点 波多奥飯石神楽', '出雲の伝統を受け継ぐ奥飯石神楽。大蛇が登場する迫真の舞台に観客も引き込まれます。')">
+              <img src="./img/波多奥飯石神楽.jpg" alt="波多奥飯石神楽" loading="lazy">
+              <div class="gallery-info">
+                <h4>波多奥飯石神楽</h4>
+                <p>勇壮な出雲神楽の真髄</p>
+                <span class="zoom-hint">🔍 クリックで拡大</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. 八本杉記念写真 -->
+          <div class="gallery-item" data-category="shrine">
+            <div class="gallery-card" onclick="openModal('./img/波多神社.JPG', '波多神社の象徴・八本杉（額縁記録）', '昭和初期まで波多神社の境内にそびえ立った巨樹「八本杉」。太古から地域を見守ってきた歴史の証です。')">
+              <img src="./img/波多神社.JPG" alt="八本杉の記念写真" loading="lazy">
+              <div class="gallery-info">
+                <h4>八本杉の記憶</h4>
+                <p>波多神社境内にそびえた伝説の巨樹</p>
+                <span class="zoom-hint">🔍 クリックで拡大</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. はたマーケット秋収穫祭 -->
+          <div class="gallery-item" data-category="spots">
+            <div class="gallery-card" onclick="openModal('./img/波多マーケット.JPG', 'はたマーケット 秋収穫祭', '赤ちゃん連れのお母さんからご年配の方まで、温かい笑顔が集まる地域の交流拠点。')">
+              <img src="./img/波多マーケット.JPG" alt="はたマーケット 秋収穫祭" loading="lazy">
+              <div class="gallery-info">
+                <h4>はたマーケット 秋収穫祭</h4>
+                <p>地域の温かい笑顔が集まる場所</p>
+                <span class="zoom-hint">🔍 クリックで拡大</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. マーケット日常 -->
+          <div class="gallery-item" data-category="spots">
+            <div class="gallery-card" onclick="openModal('./img/マーケット.jpeg', 'はたマーケットの日常とお買い物', 'レジでの世間話や温かいふれあい。地域の暮らしを支える温もりあるマーケットです。')">
+              <img src="./img/マーケット.jpeg" alt="マーケットの日常風景" loading="lazy">
+              <div class="gallery-info">
+                <h4>マーケットの日常</h4>
+                <p>ふれあいと会話が生まれるレジ前</p>
+                <span class="zoom-hint">🔍 クリックで拡大</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9. 波多温泉 満壽の湯 -->
+          <div class="gallery-item" data-category="spots">
+            <div class="gallery-card" onclick="openModal('./img/満壽の湯.jpg', '波多温泉 満壽の湯', '地域の憩いの湯処「満壽の湯」。あたたかいお湯と地元の温かなおもてなしが自慢です。')">
+              <img src="./img/満壽の湯.jpg" alt="波多温泉 満壽の湯" loading="lazy">
+              <div class="gallery-info">
+                <h4>波多温泉 満壽の湯</h4>
+                <p>心も体もぽかぽかに温まる名湯</p>
+                <span class="zoom-hint">🔍 クリックで拡大</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10. 波多交流センター -->
+          <div class="gallery-item" data-category="spots">
+            <div class="gallery-card" onclick="openModal('./img/波多交流センター.JPG', '波多交流センター（旧波多小学校）', '旧小学校舎を活用したコミュニティ拠点。はたマーケットもここに併設されています。')">
+              <img src="./img/波多交流センター.JPG" alt="波多交流センター 外観" loading="lazy">
+              <div class="gallery-info">
+                <h4>波多交流センター</h4>
+                <p>地域の想いを受け継ぐ旧校舎</p>
+                <span class="zoom-hint">🔍 クリックで拡大</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 11. 波多交流センター青空 -->
+          <div class="gallery-item" data-category="spots">
+            <div class="gallery-card" onclick="openModal('./img/波多交流センター2.JPG', '青空に映える波多交流センター', '澄み渡る青空と緑豊かな山々に囲まれた波多交流センター。')">
+              <img src="./img/波多交流センター2.JPG" alt="青空と波多交流センター" loading="lazy">
+              <div class="gallery-info">
+                <h4>交流センターと青空</h4>
+                <p>澄んだ自然に囲まれたコミュニティ</p>
+                <span class="zoom-hint">🔍 クリックで拡大</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 12. 波多せんべい焼印 -->
+          <div class="gallery-item" data-category="spots">
+            <div class="gallery-card" onclick="openModal('./img/波多せんべい2.jpg', '波多せんべい 焼印のアップ', '波多神社の鳥居とはやしこの可愛い焼印。職人の真心が込められた一枚。')">
+              <img src="./img/波多せんべい2.jpg" alt="波多せんべい焼印" loading="lazy">
+              <div class="gallery-info">
+                <h4>波多せんべい 焼印</h4>
+                <p>波多神社とはやしこのシンボル</p>
+                <span class="zoom-hint">🔍 クリックで拡大</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 13. 波多せんべいパッケージ -->
+          <div class="gallery-item" data-category="spots">
+            <div class="gallery-card" onclick="openModal('./img/波多せんべい.jpg', '波多せんべい パッケージ', '波多神社秋の例大祭・はやしこ奉納の写真がラベルにあしらわれた人気のお土産。')">
+              <img src="./img/波多せんべい.jpg" alt="波多せんべい パッケージ" loading="lazy">
+              <div class="gallery-info">
+                <h4>波多せんべい パック</h4>
+                <p>感謝の心が詰まった手土産</p>
+                <span class="zoom-hint">🔍 クリックで拡大</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 14. 波多せんべいポスター -->
+          <div class="gallery-item" data-category="spots">
+            <div class="gallery-card" onclick="openModal('./img/波多せんべいポスター.jpg', '波多せんべい 紹介ポスター', '「ふるさとの味を、大切な人へ」香ばしくてどこか懐かしい波多の味。')">
+              <img src="./img/波多せんべいポスター.jpg" alt="波多せんべい ポスター" loading="lazy">
+              <div class="gallery-info">
+                <h4>波多せんべい ポスター</h4>
+                <p>ふるさとの味を大切な人へ</p>
+                <span class="zoom-hint">🔍 クリックで拡大</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- セクション5：アクセス・スポット情報 -->
+    <section class="section section-access" id="access">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-label">ACCESS & INFORMATION</div>
+          <h2 class="section-title">波多へのアクセス・施設案内</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle">豊かな自然と温かな笑顔に出会いに、ぜひ波多へお越しください</p>
+        </div>
+
+        <div class="access-grid">
+          <!-- 波多神社 -->
+          <div class="access-card">
+            <div class="access-card-head">
+              <span class="access-icon">⛩️</span>
+              <h3>波多神社</h3>
+            </div>
+            <div class="access-card-body">
+              <p class="access-address"><strong>所在地：</strong>島根県雲南市掛合町波多</p>
+              <p class="access-desc">秋の例大祭（毎年11月14日）には、はやしこ奉納や神楽が行われます。苔むす石段と御神木の杉並木が美しく、四季を通じて参拝いただけます。</p>
+              <div class="access-btn-wrap">
+                <a href="https://maps.google.com/?q=波多神社+島根県雲南市掛合町波多" target="_blank" rel="noopener noreferrer" class="btn-map">📍 Google マップで開く</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 波多温泉 満壽の湯 -->
+          <div class="access-card">
+            <div class="access-card-head">
+              <span class="access-icon">♨️</span>
+              <h3>波多温泉 満壽の湯</h3>
+            </div>
+            <div class="access-card-body">
+              <p class="access-address"><strong>所在地：</strong>〒690-2703 島根県雲南市掛合町波多1171-1</p>
+              <p class="access-desc">ゆったりと心身を癒やす波多の温浴施設。名物「はたせんべい」の販売も行われています。</p>
+              <div class="access-btn-wrap">
+                <a href="https://maps.google.com/?q=波多温泉+満壽の湯+島根県雲南市掛合町波多1171-1" target="_blank" rel="noopener noreferrer" class="btn-map">📍 Google マップで開く</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- はたマーケット＆波多交流センター -->
+          <div class="access-card">
+            <div class="access-card-head">
+              <span class="access-icon">🛒</span>
+              <h3>はたマーケット / 波多交流センター</h3>
+            </div>
+            <div class="access-card-body">
+              <p class="access-address"><strong>所在地：</strong>〒690-2703 島根県雲南市掛合町波多459-1</p>
+              <p class="access-desc">旧波多小学校を活用した交流拠点。地元の新鮮な特産品やお土産用の「はたせんべい」をお求めいただけます。</p>
+              <div class="access-btn-wrap">
+                <a href="https://maps.google.com/?q=波多交流センター+島根県雲南市掛合町波多459-1" target="_blank" rel="noopener noreferrer" class="btn-map">📍 Google マップで開く</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 掛合分校 探究プロジェクト紹介 -->
+        <div class="school-project-box">
+          <div class="sp-icon">🎓</div>
+          <div class="sp-content">
+            <h3>島根県立大東高等学校 掛合分校 探究プロジェクト</h3>
+            <p>
+              このページは、島根県立大東高校掛合分校の生徒による「地域探究学習」の一環として制作されました。<br>
+              雲南市掛合町波多地区が誇る<strong>「自然の豊かさ」</strong>、<strong>「人の温かさ」</strong>、そして歴史ある<strong>「波多神社」</strong>や伝統芸能<strong>「はやしこ」</strong>、名物<strong>「はたせんべい」</strong>の魅力を、地域内外の多くの方に届けたいという想いで取り組んでいます。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- モーダル（写真拡大ビューア） -->
+  <div class="modal-backdrop" id="imageModal" aria-hidden="true" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeModal()" aria-label="閉じる">×</button>
+      <div class="modal-img-container">
+        <img src="" alt="" id="modalImg">
+      </div>
+      <div class="modal-caption-container">
+        <h4 id="modalTitle">写真タイトル</h4>
+        <p id="modalDesc">写真の説明文が入ります。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <div class="f-mark">波</div>
+        <div class="f-text">
+          <span class="f-title">波多地区・波多神社 魅力紹介</span>
+          <span class="f-sub">島根県雲南市 掛合町波多</span>
+        </div>
+      </div>
+
+      <div class="footer-keywords">
+        <span>🌿 自然豊か</span>
+        <span>💛 人が温かい</span>
+        <span>🏮 はやしこ</span>
+        <span>🍘 はたせんべい</span>
+        <span>⛩️ 波多神社</span>
+        <span>♨️ 満壽の湯</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="#about">波多の魅力</a>
+        <a href="#spots">名所スポット</a>
+        <a href="#shrine">波多神社</a>
+        <a href="#hayashiko">はやしこ</a>
+        <a href="#senbei">はたせんべい</a>
+        <a href="#gallery">写真館</a>
+        <a href="#access">アクセス</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 島根県立大東高等学校 掛合分校 探究プロジェクト / 波多地区 地域紹介</p>
+      </div>
+    </div>
+
+    <!-- ページトップへ戻るボタン -->
+    <a href="#top" class="back-to-top" id="backToTop" aria-label="ページ最上部へ戻る">↑</a>
+  </footer>
+
+  <!-- スクリプト -->
+  <script src="./assets/app.js"></script>
+</body>
 </html>
